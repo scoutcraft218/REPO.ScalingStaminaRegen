@@ -138,6 +138,7 @@ namespace MyMod.Patches
         private static IEnumerator WaitAndActivate()
         {
             //Plugin.mls.LogDebug("SemiFunc run is " + RunManager.instance.levelCurrent);
+
             // wait until level generation is done
             while (!SemiFunc.LevelGenDone())
             {
@@ -152,7 +153,7 @@ namespace MyMod.Patches
             
             yield return new WaitForSeconds(1f);
             Plugin.mls.LogDebug("Is Level or Shop, done WaitAndActivate()");
-            RecalculateAgility(); // recalculate every GameDirector_Start_Postfix()  
+            RecalculateAgility();
             if (ToggleDisableAgility) printAgility(); // print it once if using this setting, just in case
         }
 
@@ -171,7 +172,7 @@ namespace MyMod.Patches
          */
         public static void RecalculateAgility()
         {
-            SetValueConfig(); // redo config values everytime agility is recalculated
+            SetValueConfig();
 
             if (ToggleDisableAgility) return;
 
@@ -181,7 +182,6 @@ namespace MyMod.Patches
                 return;
             }
 
-            // when done waiting, update the stat values
             int ValueCrouchRest = StatsManager.instance.playerUpgradeCrouchRest.GetValueOrDefault(localSteamID, 0);
             int ValueSpeed = StatsManager.instance.playerUpgradeSpeed.GetValueOrDefault(localSteamID, 0);
             int ValueStamina = StatsManager.instance.playerUpgradeStamina.GetValueOrDefault(localSteamID, 0);
@@ -194,13 +194,12 @@ namespace MyMod.Patches
 
         private static void printAgility()
         {
-            // when done waiting, update the stat values
             int ValueCrouchRest = StatsManager.instance.playerUpgradeCrouchRest.GetValueOrDefault(localSteamID, 0);
             int ValueSpeed = StatsManager.instance.playerUpgradeSpeed.GetValueOrDefault(localSteamID, 0);
             int ValueStamina = StatsManager.instance.playerUpgradeStamina.GetValueOrDefault(localSteamID, 0);
 
             LogLevel level = ToggleRecalculateInfo ? LogLevel.Info : LogLevel.Debug;
-            Plugin.mls.Log(level, $"AgilityRegenBuff has been recaluated: AgilityRegenBuff: {AgilityRegenBuff} + BaseStaminaRegen: {BaseStaminaRegen} = {AgilityRegenBuff + BaseStaminaRegen}");
+            Plugin.mls.Log(level, $"Recaluated AgilityRegenBuff: AgilityRegenBuff: {AgilityRegenBuff} + BaseStaminaRegen: {BaseStaminaRegen} = {AgilityRegenBuff + BaseStaminaRegen}");
             Plugin.mls.LogDebug($"Player {localSteamID} CrouchRest: {ValueCrouchRest}, Speed: {ValueSpeed}, Stamina: {ValueStamina}");
         }
 
@@ -209,7 +208,7 @@ namespace MyMod.Patches
         [HarmonyPostfix]
         public static void PatchAgility(PlayerController __instance, ref float ___sprintRechargeTimer)
         {
-            // don't patch anything is agility is disabled
+            // don't patch anything if agility is disabled
             if (ToggleDisableAgility) return;
 
             // either calculate agility per frame OR calculate if AreStatsReady changes

@@ -17,7 +17,7 @@ namespace MyMod
 
         private const string MOD_GUID = "scoutcraft.ScalingStaminaRegen";
         private const string MOD_Name = "Scaling Stamina Regen";
-        private const string MOD_Version = "1.0.0";
+        private const string MOD_Version = "1.0.2";
 
         private readonly Harmony _harmony = new Harmony(MOD_GUID);
         internal static ManualLogSource mls = BepInEx.Logging.Logger.CreateLogSource(MOD_GUID);
@@ -41,15 +41,15 @@ namespace MyMod
 
         public void BindConfiguration()
         {
-            BaseStaminaRegen = Config.Bind<float>("Stamina Regen.Values", "BaseStaminaRegen", 3f, "What the base stamina regen is. (vanilla is 2 btw)");
+            BaseStaminaRegen = Config.Bind<float>("Stamina Regen.Values", "BaseStaminaRegen", 2f, "What the base stamina regen is.");
             SprintRechargeTime = Config.Bind<float>("Stamina Regen.Values", "SprintRechargeTime", 1f, "How long it takes after sprinting for base stamina regen to reactivate.");
-            AgilityPerUpgrade = Config.Bind<float>("Stamina Regen.Values", "AgilityPerUpgrade", 0.2f, "Additional stamina regeneration per second for each combined level of Stamina + Crouch Rest + Speed upgrades.");
+            AgilityPerUpgrade = Config.Bind<float>("Stamina Regen.Values", "AgilityPerUpgrade", 0.2f, "Additional stamina regen per second for each combined level of Stamina + Crouch Rest + Speed upgrades.");
             MaxAgilityCap = Config.Bind<float>("Stamina Regen.Values", "MaxAgilityCap", 50f, "What AgilityPerUpgrade will be capped at.");
 
-            ToggleDisableAgility = Config.Bind<bool>("Stamina Regen.Toggle", "ToggleDisableAgility", false, "Disables the Agility bonus by fixing AgilityPerUpgrade at 0.");
+            ToggleDisableAgility = Config.Bind<bool>("Stamina Regen.Toggle", "ToggleDisableAgility", false, "Disables the Agility bonus by fixing Agility at 0.");
             ToggleAgilityTimer = Config.Bind<bool>("Stamina Regen.Toggle", "ToggleAgilityTimer", false, "Whether Agility should activate during the Sprint timer.");
             ToggleRecalculatePerFrame = Config.Bind<bool>("Stamina Regen.Toggle", "ToggleRecalculatePerFrame", false, "If Agility should be recalculated every frame. (suppresses most Agility debug logs)");
-            ToggleRecalculateInfo = Config.Bind<bool>("Stamina Regen.Toggle", "ToggleRecalculateInfo", false, "If Agility info should be printed in info level Logger. (it's Debug by default)");
+            ToggleRecalculateInfo = Config.Bind<bool>("Stamina Regen.Toggle", "ToggleRecalculateInfo", false, "If Agility info should be printed in level \"Info\" of Logger. (it's Debug by default)");
             ToggleAgilityUncapped = Config.Bind<bool>("Stamina Regen.Toggle", "ToggleAgilityUncapped", false, "If Agility should cap out at MaxAgilityCap");
         }
 
