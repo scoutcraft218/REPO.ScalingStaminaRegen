@@ -1,5 +1,5 @@
 # ScalingStaminaRegen
-(This mod is partially inspired by headclef's Agility, very few parts of the description are similar since there's like no other way to describe it and very few code were heavily remodified, everything else is original)
+(This mod is partially inspired by headclef's Agility, very few parts of the description are similar since there's like no other way to describe it and 1 method was heavily remodified, everything else is original)
 
 This mod adds bonus passive stamina regen called "Agility" which scales with stamina-related upgrade levels.
 - Scales with Stamina, Sprint Speed and Crouch Rest
