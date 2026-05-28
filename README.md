@@ -8,10 +8,10 @@ Here is an example of the Agility buff in action:
 
 | Stamina | Crouch Rest | Speed | Combined | Agility bonus (0.2/sec) | Total regen (3/sec) |
 | ------- | ----------- | ----- | -------- | ----------------------- | ------------------- |
-| 1       | 0           | 0     | 1        | 0.2/sec                 | 3.3/sec             |
-| 2       | 1           | 1     | 4        | 0.8/sec                 | 4.2/sec             |
-| 3       | 2           | 2     | 7        | 1.4/sec                 | 5.1/sec             |
-| 5       | 3           | 3     | 11       | 2.2/sec                 | 6.3/sec             |
+| 1       | 0           | 0     | 1        | 0.2/sec                 | 3.2/sec             |
+| 2       | 1           | 1     | 4        | 0.8/sec                 | 3.8/sec             |
+| 3       | 2           | 2     | 7        | 1.4/sec                 | 4.4/sec             |
+| 5       | 3           | 3     | 11       | 2.2/sec                 | 5.2/sec             |
 
 
 Here is a list of all configurables:
