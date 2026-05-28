@@ -17,12 +17,10 @@ namespace MyMod
 
         private const string MOD_GUID = "scoutcraft.ScalingStaminaRegen";
         private const string MOD_Name = "Scaling Stamina Regen";
-        private const string MOD_Version = "0.1.0";
+        private const string MOD_Version = "1.0.0";
 
         private readonly Harmony _harmony = new Harmony(MOD_GUID);
         internal static ManualLogSource mls = BepInEx.Logging.Logger.CreateLogSource(MOD_GUID);
-
-        //static ConfigFile ModConfigFile = new ConfigFile(Path.Combine(Paths.ConfigPath, $"{MOD_GUID}.cfg"), true);
 
         internal static ConfigEntry<float> BaseStaminaRegen = null!;
         internal static ConfigEntry<float> SprintRechargeTime = null!;

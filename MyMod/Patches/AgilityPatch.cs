@@ -19,14 +19,13 @@ namespace MyMod.Patches
         internal static float AgilityPerUpgrade;
         internal static float MaxAgilityCap;
         
-
         internal static bool ToggleDisableAgility;
-        internal static bool ToggleAgilityTimer; // agility ignores sprint timer
+        internal static bool ToggleAgilityTimer;
         internal static bool ToggleRecalculatePerFrame;
         internal static bool ToggleRecalculateInfo;
         internal static bool ToggleAgilityUncapped;
 
-        // things
+        // variables
         static float agilityRechargeTimer = 0f;
         static float agilityRechargeTimerStart = 0.2f;
 
@@ -47,7 +46,7 @@ namespace MyMod.Patches
             MaxAgilityCap = Plugin.MaxAgilityCap.Value;
 
             ToggleDisableAgility = Plugin.ToggleDisableAgility.Value;
-            ToggleAgilityTimer = Plugin.ToggleAgilityTimer.Value; // agility ignores sprint timer
+            ToggleAgilityTimer = Plugin.ToggleAgilityTimer.Value;
             ToggleRecalculatePerFrame = Plugin.ToggleRecalculatePerFrame.Value;
             ToggleRecalculateInfo = Plugin.ToggleRecalculateInfo.Value;
             ToggleAgilityUncapped = Plugin.ToggleAgilityUncapped.Value;
@@ -135,6 +134,7 @@ namespace MyMod.Patches
             
         }
 
+        // i borrowed this from headclef-CharacterStats-1.0.0
         private static IEnumerator WaitAndActivate()
         {
             //Plugin.mls.LogDebug("SemiFunc run is " + RunManager.instance.levelCurrent);
