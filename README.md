@@ -1,5 +1,5 @@
 # ScalingStaminaRegen
-(This mod is partially inspired by headclef's Agility, very few parts of the description are similar since there's like no other way to describe it and very few code were heavily remodified, everything else is original)
+(This mod is partially inspired by headclef's Agility, very few parts of the description are similar since there's like no other way to describe it and 1 method was heavily remodified, everything else is original)
 
 This mod adds bonus passive stamina regen called "Agility" which scales with stamina-related upgrade levels.
 - Scales with Stamina, Sprint Speed and Crouch Rest
@@ -8,10 +8,10 @@ Here is an example of the Agility buff in action:
 
 | Stamina | Crouch Rest | Speed | Combined | Agility bonus (0.2/sec) | Total regen (3/sec) |
 | ------- | ----------- | ----- | -------- | ----------------------- | ------------------- |
-| 1       | 0           | 0     | 1        | 0.2/sec                 | 3.3/sec             |
-| 2       | 1           | 1     | 4        | 0.8/sec                 | 4.2/sec             |
-| 3       | 2           | 2     | 7        | 1.4/sec                 | 5.1/sec             |
-| 5       | 3           | 3     | 11       | 2.2/sec                 | 6.3/sec             |
+| 1       | 0           | 0     | 1        | 0.2/sec                 | 3.2/sec             |
+| 2       | 1           | 1     | 4        | 0.8/sec                 | 3.8/sec             |
+| 3       | 2           | 2     | 7        | 1.4/sec                 | 4.4/sec             |
+| 5       | 3           | 3     | 11       | 2.2/sec                 | 5.2/sec             |
 
 
 Here is a list of all configurables:
@@ -34,6 +34,8 @@ Notes:
 - The vanilla base stamina regen is actually 2 and not 3, but i find 3 works well.
 - Modifying max stamina is very weird and modifying crouch regen rate is very hard so those changes won't come for a while
 - I think BaseStaminaRegen and Agility should theoretically work with negative values but never tested.
+
+Super epic icon image made by Bumpy Jr
 
 # Extra details
 The values of this mod are updated via "SetValueConfig()". This is called every time Agility gets recalculated via RecalculateAgility(). Agility gets recalculated in 3 cases:
