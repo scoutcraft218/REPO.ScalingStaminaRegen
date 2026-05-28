@@ -35,6 +35,8 @@ Notes:
 - Modifying max stamina is very weird and modifying crouch regen rate is very hard so those changes won't come for a while
 - I think BaseStaminaRegen and Agility should theoretically work with negative values but never tested.
 
+Super epic icon image made by Bumpy Jr
+
 # Extra details
 The values of this mod are updated via "SetValueConfig()". This is called every time Agility gets recalculated via RecalculateAgility(). Agility gets recalculated in 3 cases:
 1. A round started in either some map or the shop after 1 second.
